@@ -1,0 +1,182 @@
+:root {
+  --yellow: #ffd31a;
+  --red: #e63946;
+  --black: #111;
+  --white: #fff;
+  --gray: #ececec;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #fff7cc, #ffffff 35%);
+  color: var(--black);
+}
+
+.container {
+  width: min(960px, 92%);
+  margin: 1rem auto 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 6px 6px 0 var(--black);
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--yellow), #ffe680);
+}
+
+h1,
+h2 {
+  margin: 0 0 0.65rem;
+}
+
+.badge {
+  display: inline-block;
+  margin: 0 0 0.75rem;
+  background: var(--red);
+  color: var(--white);
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.workout-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.warning {
+  border-color: var(--red);
+}
+
+.control-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+input[type='number'] {
+  width: 100%;
+  max-width: 220px;
+  padding: 0.55rem;
+  border: 2px solid var(--black);
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 700;
+}
+
+.checklist {
+  display: grid;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem;
+  border: 2px solid var(--gray);
+  border-radius: 10px;
+}
+
+.progress-bar {
+  height: 18px;
+  width: 100%;
+  border-radius: 999px;
+  background: var(--gray);
+  overflow: hidden;
+  border: 1px solid #bbb;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--red), #ff7f50);
+  transition: width 0.25s ease;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 0.35rem;
+}
+
+.day-cell {
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  text-align: center;
+  padding: 0.45rem 0.2rem;
+  font-size: 0.82rem;
+  background: #fafafa;
+}
+
+.day-cell.current {
+  outline: 2px solid var(--black);
+}
+
+.day-cell.done {
+  background: #e7ffe9;
+  border-color: #5cb85c;
+  font-weight: 700;
+}
+
+button {
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  background: var(--red);
+  color: var(--white);
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.08);
+}
+
+.hint {
+  margin-top: 0.6rem;
+  color: #333;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero,
+  .actions,
+  .motivation {
+    grid-column: 1 / -1;
+  }
+
+  button {
+    width: auto;
+    min-width: 280px;
+  }
+}

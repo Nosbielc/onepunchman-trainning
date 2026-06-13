@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio 100 Dias – Treinamento do Herói</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero card">
+        <p class="badge">⚡ Desafio Épico</p>
+        <h1>Desafio 100 Dias – Treinamento do Herói</h1>
+        <p>
+          Um desafio fitness divertido, gamificado e inspirado em heróis de anime.
+        </p>
+      </header>
+
+      <section class="card">
+        <h2>Treino Clássico do Dia</h2>
+        <ul class="workout-list">
+          <li>💪 100 flexões</li>
+          <li>🔥 100 abdominais</li>
+          <li>🦵 100 agachamentos</li>
+          <li>🏃 10 km de corrida</li>
+          <li>📅 Todos os dias</li>
+        </ul>
+      </section>
+
+      <section class="card warning" aria-live="polite">
+        <h2>Aviso de Segurança</h2>
+        <p>
+          Adapte o treino ao seu nível atual e respeite seus limites físicos. Se
+          necessário, procure orientação profissional antes de iniciar.
+        </p>
+      </section>
+
+      <section class="card controls">
+        <h2>Configuração do Desafio</h2>
+        <div class="control-grid">
+          <label for="dayInput">Dia atual (1 a 100)</label>
+          <input id="dayInput" type="number" min="1" max="100" value="1" />
+
+          <label class="toggle" for="adaptedMode">
+            <input id="adaptedMode" type="checkbox" />
+            <span>Modo Treino Adaptado</span>
+          </label>
+        </div>
+        <p id="modeDescription" class="hint"></p>
+      </section>
+
+      <section class="card">
+        <h2>Checklist Diário</h2>
+        <div id="checklist" class="checklist"></div>
+
+        <div class="progress-group" aria-live="polite">
+          <p>
+            Progresso do dia: <strong id="progressText">0%</strong>
+          </p>
+          <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Ranking Visual</h2>
+        <p>
+          Nível atual: <strong id="rankLabel">Civil</strong>
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Calendário de Progresso (100 dias)</h2>
+        <div id="calendar" class="calendar" aria-live="polite"></div>
+      </section>
+
+      <section class="card motivation" aria-live="polite">
+        <h2>Motivação</h2>
+        <p id="motivationText">Marque uma tarefa para receber sua frase épica.</p>
+        <p id="finalMessage" class="final-message hidden">
+          🎉 Lendário! Você concluiu os 100 dias do desafio. Nível máximo alcançado!
+        </p>
+      </section>
+
+      <section class="actions">
+        <button id="resetButton" type="button">Reiniciar Progresso</button>
+      </section>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
